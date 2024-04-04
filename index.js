@@ -8,14 +8,13 @@
 
 //------------------------------------------------------//
 
+let lastScroll = 0;
 window.addEventListener("scroll", () => {
-  const navValue = setTimeout(() => {
-    window.scrollY;
-  }, 1);
-
-  if (navValue > window.scrollY) {
+  if (lastScroll > window.scrollY) {
     navbar.style.top = "0";
   } else {
     navbar.style.top = "-60px";
   }
+
+  lastScroll = window.scrollY;
 });
